@@ -1,4 +1,5 @@
 import RefreshIcon from "../assets/icon-refresh.svg";
+import "./Quote.css";
 
 interface QuoteProps {
   isMoreInfoOpen: boolean;

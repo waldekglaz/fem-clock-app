@@ -11,7 +11,9 @@ const Greeting = ({ isEvening, time }: GreetingProps) => {
   return (
     <p className="greeting">
       <img src={isEvening ? Moon : Sun} />
-      {greeting(time)}
+      <div className="wrapper">
+        <span>{greeting(time)}</span>
+      </div>
     </p>
   );
 };

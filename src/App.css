@@ -2,7 +2,7 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
-  padding: 3.88888vw 11.45vw;
+  padding: 0 25px 32px;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -14,75 +14,60 @@
       rgba(151, 151, 151, 0.6),
       rgba(151, 151, 151, 0.6)
     ),
-    url("../public/assets/desktop/bg-image-daytime.jpg");
+    url("../public/assets/mobile/bg-image-daytime.jpg");
 }
 .bg-evening {
-  background-image: url("../public/assets/desktop/bg-image-nighttime.jpg");
+  background-image: linear-gradient(
+      rgba(151, 151, 151, 0.3),
+      rgba(151, 151, 151, 0.3)
+    ),
+    url("../public/assets/mobile/bg-image-nighttime.jpg");
 }
 
-.quote {
-  font-size: 1.25vw;
-  max-width: 39.791666vw;
-  display: flex;
-  align-items: flex-start;
-  gap: 1.111vw;
-
-  .content {
-    margin-bottom: 0.902vw;
-    line-height: 1.944444vw;
-  }
-  .author {
-    font-weight: bold;
-  }
-}
-.quote.hidden {
-  display: none;
-}
 .refresh-btn {
   background-color: transparent;
   border: transparent;
-  margin-top: 0.47777vw;
+  margin-top: 0;
   cursor: pointer;
+  width: 17px;
 }
 .greeting {
-  font-size: 1.388888vw;
-  letter-spacing: 0.2777777vw;
+  font-size: 15px;
+  letter-spacing: 3px;
   font-weight: lighter;
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 1.111vw;
+  gap: 16px;
 }
 
 .time {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  padding-top: 100px;
 }
 
 .time-display {
   display: flex;
   align-items: baseline;
   .hours {
-    font-size: 13.888888888vw;
+    font-size: 100px;
     font-weight: bold;
-    letter-spacing: -0.347222vw;
+    letter-spacing: -2.5;
   }
   .abbreviation {
-    font-size: 2.7777vw;
+    font-size: 15px;
     font-weight: lighter;
   }
 }
 .location {
-  font-size: 1.666vw;
+  font-size: 15px;
   font-weight: bold;
-  letter-spacing: 0.33333vw;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 .more-info {
-  height: 27.777777vw;
-  padding: 3.88888vw 11.45vw;
-  backdrop-filter: blur(1.1111vw) brightness(1.7);
+  height: 256px;
+  padding: 48px 26px;
+  backdrop-filter: blur(100%) brightness(1.7);
   position: absolute;
   left: 0;
   right: 0;
@@ -91,29 +76,27 @@
   color: #303030;
   .wrapper {
     display: flex;
+    flex-direction: column;
   }
   .category {
-    margin-bottom: 2.916666vw;
+    /* margin-bottom: 2.916666vw; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
   }
   .categories {
     display: flex;
     flex-direction: column;
   }
-  .categories:first-child {
-    padding-right: 10.20833vw;
-    border-right: 1px solid #979797;
-  }
-  .categories:last-child {
-    padding-left: 6.527777vw;
-  }
   .title {
-    font-size: 1.041666vw;
-    letter-spacing: 0.208333vw;
+    font-size: 10px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: lighter;
   }
   .value {
-    font-size: 3.88888vw;
+    font-size: 20px;
     font-weight: bold;
   }
 }
@@ -121,14 +104,146 @@
   display: none;
 }
 .more-info.evening {
-  backdrop-filter: blur(1.1111vw) brightness(0.3);
+  backdrop-filter: blur(13px) brightness(0.2);
   .title {
     color: #fff;
   }
   .value {
     color: #fff;
   }
-  .categories:first-child {
-    border-right: 1px solid #fff;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 64px 64px;
+  }
+  .bg--mornings {
+    background-image: linear-gradient(
+        rgba(151, 151, 151, 0.6),
+        rgba(151, 151, 151, 0.6)
+      ),
+      url("../public/assets/tablet/bg-image-daytime.jpg");
+  }
+  .bg-evening {
+    background-image: linear-gradient(
+        rgba(151, 151, 151, 0.3),
+        rgba(151, 151, 151, 0.3)
+      ),
+      url("../public/assets/tablet/bg-image-nighttime.jpg");
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    padding: 3.88888vw 11.45vw;
+  }
+  .bg--mornings {
+    background-image: linear-gradient(
+        rgba(151, 151, 151, 0.6),
+        rgba(151, 151, 151, 0.6)
+      ),
+      url("../public/assets/desktop/bg-image-daytime.jpg");
+  }
+  .bg-evening {
+    background-image: linear-gradient(
+        rgba(151, 151, 151, 0.3),
+        rgba(151, 151, 151, 0.3)
+      ),
+      url("../public/assets/desktop/bg-image-nighttime.jpg");
+  }
+
+  .greeting {
+    font-size: 1.388888vw;
+    letter-spacing: 0.2777777vw;
+    font-weight: lighter;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 1.111vw;
+  }
+
+  .time {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .time-display {
+    display: flex;
+    align-items: baseline;
+    .hours {
+      font-size: 13.888888888vw;
+      font-weight: bold;
+      letter-spacing: -0.347222vw;
+    }
+    .abbreviation {
+      font-size: 2.7777vw;
+      font-weight: lighter;
+    }
+  }
+  .location {
+    font-size: 1.666vw;
+    font-weight: bold;
+    letter-spacing: 0.33333vw;
+    text-transform: uppercase;
+  }
+  .more-info {
+    height: 27.777777vw;
+    padding: 3.88888vw 11.45vw;
+    backdrop-filter: blur(1.1111vw) brightness(1.7);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    color: #303030;
+    .wrapper {
+      display: flex;
+    }
+    .category {
+      margin-bottom: 2.916666vw;
+    }
+    .categories {
+      display: flex;
+      flex-direction: column;
+    }
+    .categories:first-child {
+      padding-right: 10.20833vw;
+      border-right: 1px solid #979797;
+    }
+    .categories:last-child {
+      padding-left: 6.527777vw;
+    }
+    .title {
+      font-size: 1.041666vw;
+      letter-spacing: 0.208333vw;
+      text-transform: uppercase;
+      font-weight: lighter;
+    }
+    .value {
+      font-size: 3.88888vw;
+      font-weight: bold;
+    }
+  }
+  .more-info.hidden {
+    display: none;
+  }
+  .more-info.evening {
+    backdrop-filter: blur(1.1111vw) brightness(0.2);
+    .title {
+      color: #fff;
+    }
+    .value {
+      color: #fff;
+    }
+    .categories:first-child {
+      border-right: 1px solid #fff;
+    }
+  }
+  .desktop-only {
+    display: block;
   }
 }

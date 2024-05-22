@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import Button from "./components/Button";
 import Quote from "./components/Quote";
-import Greeting from "./components/Greeting";
-import CategoryItem from "./components/CategoryItem";
-import { day_of_week, extractLocation, getCurrentTime } from "./utils/utils";
+import MoreInfo from "./components/MoreInfo";
+import Time from "./components/Time";
+import { extractLocation, getCurrentTime } from "./utils/utils";
 import { ITimeData, ILocationData } from "./types/types";
 import "./App.css";
 
@@ -94,44 +93,20 @@ const App = () => {
         quote={quote}
         onClick={() => fetchQuote()}
       />
-      <div className="time">
-        <div className="wrapper">
-          <Greeting isEvening={isEvening} time={time} />
-          <div className="time-display">
-            <div className="hours">{time}</div>
-            <div className="abbreviation">{timeData?.abbreviation}</div>
-          </div>
-
-          {timeData && (
-            <div className="location">
-              In {extractLocation(timeData.timezone)}, {locationData?.cca2}
-            </div>
-          )}
-        </div>
-        <Button isOpen={isMoreInfoOpen} onClick={handleOpenClick} />
-      </div>
-      <div
-        className={`more-info ${!isMoreInfoOpen ? "hidden" : null} ${
-          isEvening ? "evening" : "daytime"
-        }`}
-      >
-        <div className="wrapper">
-          <div className="categories">
-            <CategoryItem title="Current timezone" value={timeData?.timezone} />
-            <CategoryItem
-              title="Day of the year"
-              value={timeData?.day_of_year}
-            />
-          </div>
-          <div className="categories">
-            <CategoryItem
-              title="Day of the week"
-              value={day_of_week(timeData?.day_of_week)}
-            />
-            <CategoryItem title="Week number" value={timeData?.week_number} />
-          </div>
-        </div>
-      </div>
+      <Time
+        isEvening={isEvening}
+        time={time}
+        timeData={timeData}
+        locationData={locationData}
+        isMoreInfoOpen={isMoreInfoOpen}
+        handleOpenClick={handleOpenClick}
+      />
+      <MoreInfo
+        isEvening={isEvening}
+        isMoreInfoOpen={isMoreInfoOpen}
+        setIsMoreInfoOpen={setIsMoreInfoOpen}
+        timeData={timeData}
+      />
     </main>
   );
 };

@@ -1,25 +1,65 @@
 .main-btn {
   background-color: #fff;
   border: #fff;
-  padding: 0.55555vw 0.55555vw 0.55555vw 1.45833vw;
+  padding: 3px 4px 3px 17px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.1111vw;
-  letter-spacing: 0.347222vw;
-  border-radius: 1.94444vw;
+  font-size: 12px;
+  letter-spacing: 3.75px;
+  border-radius: 28px;
   cursor: pointer;
   transition: background-color 0.6s;
-  min-width: 10.73888vw;
+  margin-top: 48px;
+  gap: 15px;
   .btn-icon {
-    width: 2.7777vw;
-    height: 2.7777vw;
+    width: 32px;
+    height: 32px;
     background-color: #303030;
     border-radius: 50%;
-    line-height: 2.7777vw;
+    line-height: 32px;
   }
 }
 
 .main-btn:hover .btn-icon {
   background-color: #d8d8d8;
+}
+
+@media (max-width: 320px) {
+  .main-btn {
+    border: #fff;
+    padding: 1.06666vw 1.06666vw 1.06666vw 4.53333vw;
+    font-size: 3.2vw;
+    letter-spacing: 1vw;
+    border-radius: 26px;
+    min-width: 30.66666vw;
+    margin-top: 12.8vw;
+    .btn-icon {
+      width: 8.533333vw;
+      height: 8.533333vw;
+      line-height: 8.533333vw;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .main-btn {
+    font-size: 16px;
+    padding: 8px 9px 8px 21px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-btn {
+    padding: 0.55555vw 0.55555vw 0.55555vw 1.45833vw;
+    font-size: 1.1111vw;
+    letter-spacing: 0.347222vw;
+    border-radius: 1.94444vw;
+    min-width: 10.73888vw;
+    .btn-icon {
+      width: 2.7777vw;
+      height: 2.7777vw;
+      line-height: 2.7777vw;
+    }
+  }
 }

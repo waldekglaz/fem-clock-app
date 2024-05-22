@@ -1,0 +1,45 @@
+.quote {
+  font-size: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  padding-top: 32px;
+
+  .content {
+    margin-bottom: 8px;
+    line-height: 22px;
+  }
+  .author {
+    font-weight: bold;
+  }
+}
+.quote.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .quote {
+    font-size: 18px;
+    .content {
+      margin-bottom: 13px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .quote {
+    font-size: 1.25vw;
+    max-width: 39.791666vw;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.111vw;
+
+    .content {
+      margin-bottom: 0.902vw;
+      line-height: 1.944444vw;
+    }
+    .author {
+      font-weight: bold;
+    }
+  }
+}
